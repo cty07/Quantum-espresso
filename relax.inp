@@ -1,0 +1,50 @@
+&CONTROL
+    calculation='vc-relax',! 'scf' 'nscf' 'bands' 'relax' 'md' 'vc-relax' 'vc-md' 
+    disk_io='low', 
+    prefix='pwscf',
+    pseudo_dir='../pseudo', 
+    outdir='./tmp', 
+    verbosity='high'
+    tprnfor=.true., 
+    tstress=.true., 
+    forc_conv_thr=1.0d-5
+/
+&SYSTEM
+    ibrav= 0,
+    celldm(1) = 1.8897261328856432, ! a.u. to Angst
+    nat= 4, 
+    ntyp= 1,
+    !nspin=2 ! 1 2 4
+    !noncolin=.true.
+    occupations = 'smearing', ! 絕緣體和半導體'fixed' 或 'tetrahedra'；金屬和金屬化的系統選擇 'smearing'
+    smearing = 'gauss', 
+    degauss = 1.0d-9
+    ecutwfc= 50, 
+    ecutrho = 500,
+/
+&ELECTRONS
+    electron_maxstep = 100
+    conv_thr = 1.0d-9
+    mixing_mode = 'plain'
+    mixing_beta = 0.8d0
+    diagonalization = 'david'
+/
+&IONS
+    ion_dynamics='bfgs'
+/
+&CELL
+    press_conv_thr=0.1
+/
+ATOMIC_SPECIES
+  Al 26.9815384 Al.upf
+CELL_PARAMETERS (alat=  1.88972613)
+4.038930 0.000000 0.000000
+0.000000 4.038930 0.000000
+0.000000 0.000000 4.038930
+ATOMIC_POSITIONS (crystal)
+Al 0.000000 0.000000 0.000000 
+Al 0.000000 0.500000 0.500000 
+Al 0.500000 0.000000 0.500000 
+Al 0.500000 0.500000 0.000000 
+K_POINTS {automatic}
+  8 8 8 0 0 0

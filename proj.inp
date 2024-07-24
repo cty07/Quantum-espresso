@@ -1,0 +1,10 @@
+&PROJWFC
+prefix='pwscf',
+outdir='./tmp',
+ngauss=0,
+degauss=0.01,
+DeltaE=0.005
+lsym=.true.
+filpdos='sno',
+filproj='sno',
+/

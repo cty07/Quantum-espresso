@@ -1,0 +1,8 @@
+&dos 
+ prefix='pwscf'
+ outdir='./tmp'
+ ngauss=1
+ degauss=1.5d-2
+ DeltaE=1.0d-2
+ fildos='dos.dos'
+/ 

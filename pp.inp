@@ -1,0 +1,5 @@
+&INPUTPP
+   outdir='./tmp'
+   plot_num=11
+   filplot='pp11.dat'
+/
